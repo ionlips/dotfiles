@@ -3,7 +3,6 @@ status = false
 template = ~/.config/git/COMMIT_EDITMSG
 
 [core]
-editor = code --wait
 excludesFile = ~/.config/git/gitignore
 
 [init]
