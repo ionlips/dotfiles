@@ -1,0 +1,46 @@
+[
+  {
+    "command": "projectManager.listProjects",
+    "key": "cmd+o"
+  },
+  {
+    "command": "workbench.action.nextEditor",
+    "key": "cmd+shift+]"
+  },
+  {
+    "command": "workbench.action.previousEditor",
+    "key": "cmd+shift+["
+  },
+  {
+    "command": "workbench.action.showCommands",
+    "key": "cmd+p"
+  },
+  {
+    "command": "workbench.action.toggleSidebarVisibility",
+    "key": "cmd+shift+,"
+  },
+  {
+    "command": "workbench.debug.action.toggleRepl",
+    "key": "cmd+shift+d"
+  },
+  {
+    "command": "workbench.view.debug",
+    "key": "cmd+d"
+  },
+  {
+    "command": "workbench.view.explorer",
+    "key": "cmd+e"
+  },
+  {
+    "command": "workbench.view.extensions",
+    "key": "cmd+x"
+  },
+  {
+    "command": "workbench.view.remote",
+    "key": "cmd+r"
+  },
+  {
+    "command": "workbench.view.scm",
+    "key": "cmd+g"
+  }
+]

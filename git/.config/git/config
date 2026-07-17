@@ -1,0 +1,19 @@
+[commit]
+status = false
+template = ~/.config/git/COMMIT_EDITMSG
+
+[core]
+editor = code --wait
+excludesFile = ~/.config/git/gitignore
+
+[init]
+defaultBranch = main
+
+[status]
+branch = true
+showStash = true
+showUntrackedFiles = all
+
+[user]
+email = 306178285+ionlips@users.noreply.github.com
+name = Ion Lipsiuc

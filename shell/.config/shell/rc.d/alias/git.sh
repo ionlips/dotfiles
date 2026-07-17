@@ -1,0 +1,8 @@
+alias ga="git add"
+alias gb="git branch"
+alias gc="git commit"
+alias gcl="git clone"
+alias gi="git init"
+alias gp="git push"
+alias gs="git status"
+alias gu="git pull"
