@@ -1,4 +1,3 @@
 !*.d/
 !bin/.local/bin/**/
 !Makefile
-lazy-lock.json
