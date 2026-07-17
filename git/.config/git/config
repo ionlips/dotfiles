@@ -16,3 +16,7 @@ showUntrackedFiles = all
 [user]
 email = 306178285+ionlips@users.noreply.github.com
 name = Ion Lipsiuc
+
+# This must be included after `[user]` otherwise, `[user]` will overwrite it.
+[includeIf "gitdir:~/dev/ichec/"]
+path = ~/.config/git/config.ichec
