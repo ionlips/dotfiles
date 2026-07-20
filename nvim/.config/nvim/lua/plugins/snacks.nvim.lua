@@ -4,9 +4,10 @@ return {
         dashboard = { enabled = false }, -- Prefer dashboard-nvim over this.
         picker = {
             hidden = true,
+            ignored = true,
             sources = {
-                explorer = { hidden = true },
-                files = { hidden = true },
+                explorer = { hidden = true, ignored = true },
+                files = { hidden = true, ignored = true },
             },
         },
     },
