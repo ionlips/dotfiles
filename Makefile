@@ -1,5 +1,5 @@
 # Directories to symlink via Stow.
-PACKAGES := aerospace editor ghostty git nvim shell starship tmux
+PACKAGES := editor git nvim shell starship tmux
 
 # Stow command to run.
 STOW := stow --ignore="\.DS_Store" --ignore="\.gitkeep" --target=${HOME}
