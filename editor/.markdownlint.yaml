@@ -1,3 +1,6 @@
+MD007:
+  indent: 4
+
 MD030:
   ol_multi: 2
   ol_single: 2
