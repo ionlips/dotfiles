@@ -5,7 +5,7 @@
   },
   "SchemaStore.nvim": {
     "branch": "main",
-    "commit": "77fb1b0aa0c7528680bed48687f3dd2c2a6ed111"
+    "commit": "3d2c297f7152208daf4a382ea7123f9e4ebf9da1"
   },
   "auto-dark-mode.nvim": {
     "branch": "main",
@@ -21,7 +21,7 @@
   },
   "catppuccin": {
     "branch": "main",
-    "commit": "058e83dc009e4dd62f30807054de9cc849699e27"
+    "commit": "c7c692a0ad3080710893abbae100171819a3e4be"
   },
   "clangd_extensions.nvim": {
     "branch": "main",
@@ -109,7 +109,7 @@
   },
   "nvim-treesitter": {
     "branch": "main",
-    "commit": "7248feaca45e4d944591497964bc19afa89ad1c6"
+    "commit": "7caec274fd19c12b55902a5b795100d21531391f"
   },
   "nvim-treesitter-textobjects": {
     "branch": "main",
