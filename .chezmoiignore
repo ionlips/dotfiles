@@ -1,14 +1,5 @@
 .gitkeep
-aerospace
 bin
-editor
-ghostty
-git
-lazygit
-nvim
-starship
-tmux
-Makefile
 
 # Ignore Bash-related files if on macOS and vice versa for GNU/Linux.
 {{ if eq .chezmoi.os "darwin" -}}
