@@ -1,4 +1,0 @@
-git:
-  commit:
-    autoWrapCommitMessage: true
-    autoWrapWidth: 72

@@ -1,0 +1,13 @@
+.gitkeep
+bin
+
+# Ignore Bash-related files if on macOS and vice versa for GNU/Linux.
+{{ if eq .chezmoi.os "darwin" -}}
+.bashrc
+.bash_profile
+.config/bash
+{{ else -}}
+.zshrc
+.zprofile
+.config/zsh
+{{ end -}}
