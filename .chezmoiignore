@@ -1,5 +1,6 @@
 .gitkeep
-bin
+.config/nvim/lazy-lock.json
+README.md
 
 # Ignore Bash-related files if on macOS and vice versa for GNU/Linux.
 {{ if eq .chezmoi.os "darwin" -}}
