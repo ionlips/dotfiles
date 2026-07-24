@@ -9,7 +9,7 @@ Configuration files managed by [chezmoi].
 Run the following:
 
 ```shell
-sh -c "$(curl -fsLS https://get.chezmoi.io/lb)" -- init --apply ionlips
+sh -c "$(curl -fsLS https://get.chezmoi.io)" -- init --apply git@github.com:ionlips/dotfiles.git
 ```
 
 This will download chezmoi, clone this repository, and configure your system.
