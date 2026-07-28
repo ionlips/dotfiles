@@ -46,6 +46,8 @@
     "url": "https://github.com/neovim/neovim/releases/download/v0.12.4/nvim-macos-arm64.tar.gz"
     {{- else if eq .chezmoi.hostname "qllm.ichec.ie" -}}
     "url": "https://github.com/neovim/neovim-releases/releases/download/v0.12.4/nvim-linux-x86_64.tar.gz"
+    {{- else if eq .chezmoi.hostname "login01.meluxina.lxp.lu" -}}
+    "url": "https://github.com/neovim/neovim-releases/releases/download/v0.12.4/nvim-linux-x86_64.tar.gz"
     {{- else -}}
     "url": "https://github.com/neovim/neovim/releases/download/v0.12.4/nvim-linux-x86_64.tar.gz"
     {{- end }}
