@@ -2,9 +2,6 @@
 status = false
 template = ~/.config/git/COMMIT_EDITMSG
 
-[core]
-excludesFile = ~/.config/git/gitignore
-
 [init]
 defaultBranch = main
 
