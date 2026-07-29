@@ -1,7 +1,6 @@
-background-opacity = 0.95
 bell-features = no-title
-font-family = JetBrains Mono
+font-family = Iosevka
 keybind = shift+enter=text:\n
 macos-titlebar-proxy-icon = hidden
-theme = dark:TokyoNight, light:TokyoNight Day
+theme = dark:Apple System Colors, light:Apple System Colors Light
 title = " "
