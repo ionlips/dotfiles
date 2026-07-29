@@ -10,8 +10,8 @@ curl https://claude.ai/install.sh -f -L -s -S | sh
 
 # Starship.
 echo "Installing Starship..."
-curl https://starship.rs/install.sh -f -L -s -S | bash -s -- -b "$HOME/.local/bin" -y
+curl https://starship.rs/install.sh -f -L -s -S | sh -s -- -b "$HOME/.local/bin" -y
 
 # uv.
 echo "Installing uv..."
-curl https://astral.sh/uv/install.sh -f -L -s -S | bash
+curl https://astral.sh/uv/install.sh -f -L -s -S | sh
