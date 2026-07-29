@@ -1,1 +1,0 @@
-export MLFLOW_DISABLE_TELEMETRY=true
