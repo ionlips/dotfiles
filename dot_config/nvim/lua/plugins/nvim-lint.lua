@@ -5,7 +5,8 @@ return {
             ["markdownlint-cli2"] = {
                 args = {
                     "--config",
-                    vim.fn.expand("~/.markdownlint.yaml"),
+                    (vim.env.XDG_CONFIG_HOME or vim.fn.expand("~/.config"))
+                        .. "/markdownlint/config.yaml",
                     "-",
                 },
             },
