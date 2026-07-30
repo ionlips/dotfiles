@@ -82,6 +82,8 @@ type = "archive"
 
 {{ if eq .chezmoi.os "darwin" -}}
 url = "https://github.com/neovim/neovim/releases/download/v0.12.4/nvim-macos-arm64.tar.gz"
+{{- else if hasSuffix ".meluxina.lxp.lu" .chezmoi.fqdnHostname -}}
+url = "https://github.com/neovim/neovim-releases/releases/download/v0.12.4/nvim-linux-x86_64.tar.gz"
 {{- else -}}
 url = "https://github.com/neovim/neovim/releases/download/v0.12.4/nvim-linux-x86_64.tar.gz"
 {{- end }}
