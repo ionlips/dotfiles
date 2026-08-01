@@ -6,7 +6,7 @@ export INSTALLER_NO_MODIFY_PATH=1
 
 # Claude Code.
 echo "Installing Claude Code..."
-curl https://claude.ai/install.sh -f -L -s -S | sh
+curl https://claude.ai/install.sh -f -L -s -S | bash
 
 # Starship.
 echo "Installing Starship..."
