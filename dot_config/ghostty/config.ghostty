@@ -2,5 +2,5 @@ bell-features = no-title
 font-family = Iosevka
 keybind = shift+enter=text:\n
 macos-titlebar-proxy-icon = hidden
-theme = dark:Apple System Colors, light:Apple System Colors Light
+theme = dark:TokyoNight Night, light:TokyoNight Day
 title = " "
