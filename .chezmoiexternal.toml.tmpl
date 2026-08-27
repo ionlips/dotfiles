@@ -44,14 +44,18 @@ path = "ripgrep-15.2.0-x86_64-unknown-linux-musl/rg"
 url = "https://github.com/BurntSushi/ripgrep/releases/download/15.2.0/ripgrep-15.2.0-x86_64-unknown-linux-musl.tar.gz"
 {{- end }}
 
+{{ if eq .chezmoi.os "darwin" -}}
 [".local/bin/tree-sitter"]
 executable = true
-type = "archive-file"
 path = "tree-sitter"
-
-{{ if eq .chezmoi.os "darwin" -}}
+type = "archive-file"
 url = "https://github.com/tree-sitter/tree-sitter/releases/download/v0.26.11/tree-sitter-cli-macos-arm64.zip"
+{{- else if hasSuffix ".meluxina.lxp.lu" .chezmoi.fqdnHostname -}}
 {{- else -}}
+[".local/bin/tree-sitter"]
+executable = true
+path = "tree-sitter"
+type = "archive-file"
 url = "https://github.com/tree-sitter/tree-sitter/releases/download/v0.26.11/tree-sitter-cli-linux-x64.zip"
 {{- end }}
 
