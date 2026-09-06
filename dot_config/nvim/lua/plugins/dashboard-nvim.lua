@@ -91,6 +91,7 @@ return {
                 statusline = false,
             },
         }
+
         for _, button in ipairs(opts.config.center) do
             button.desc = button.desc .. string.rep(" ", 43 - #button.desc)
             button.key_format = "  %s"
@@ -106,10 +107,13 @@ return {
             ),
             callback = function()
                 local buf = vim.api.nvim_get_current_buf()
+
                 if vim.bo[buf].filetype ~= "dashboard" then
                     return
                 end
+
                 local ns = vim.api.nvim_create_namespace("DashboardDoom")
+
                 for _, mark in
                     ipairs(vim.api.nvim_buf_get_extmarks(buf, ns, 0, -1, {}))
                 do
