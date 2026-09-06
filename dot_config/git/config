@@ -1,6 +1,5 @@
 [commit]
 status = false
-template = ~/.config/git/COMMIT_EDITMSG
 
 [init]
 defaultBranch = main
