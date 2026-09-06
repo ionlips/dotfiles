@@ -1,5 +1,3 @@
-background-blur = true
-background-opacity = 0.9
 bell-features = no-title
 font-family = Iosevka
 keybind = shift+enter=text:\n
