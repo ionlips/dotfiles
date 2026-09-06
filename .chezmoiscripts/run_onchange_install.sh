@@ -6,12 +6,12 @@ export INSTALLER_NO_MODIFY_PATH=1
 
 # Claude Code.
 echo "Installing Claude Code..."
-curl https://claude.ai/install.sh -f -L -s -S | bash
+curl -fsSL https://claude.ai/install.sh | bash
 
 # Starship.
 echo "Installing Starship..."
-curl https://starship.rs/install.sh -f -L -s -S | sh -s -- -b "$HOME/.local/bin" -y
+curl -sS https://starship.rs/install.sh | sh -s -- -b "$HOME/.local/bin" -y
 
 # uv.
 echo "Installing uv..."
-curl https://astral.sh/uv/install.sh -f -L -s -S | sh
+curl -LsSf https://astral.sh/uv/install.sh | sh
