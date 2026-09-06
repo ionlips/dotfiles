@@ -32,10 +32,8 @@ tmux() {
     fi
 
     if ! command tmux has-session -t=main 2>/dev/null; then
-        command tmux new-session -d -s main -c $HOME -n claude claude
-        command tmux new-window -t main: -c $HOME -n nvim nvim
-        command tmux new-window -t main: -c $HOME -n zsh
-        command tmux select-window -t main:3
+        command tmux new-session -d -s main -c $HOME
+        command tmux clock-mode
     fi
 
     command tmux attach-session -t main
