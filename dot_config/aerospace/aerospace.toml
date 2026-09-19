@@ -32,6 +32,7 @@ alt-c = "workspace M" # Proton Mail is also our calendar.
 alt-f = "workspace F"
 alt-m = "workspace M"
 alt-p = "workspace P"
+alt-r = "workspace R"
 alt-t = "workspace T"
 alt-v = "workspace V"
 
