@@ -33,6 +33,7 @@ alt-f = "workspace F"
 alt-m = "workspace M"
 alt-p = "workspace P"
 alt-r = "workspace R"
+alt-s = "workspace S"
 alt-t = "workspace T"
 alt-v = "workspace V"
 
@@ -83,6 +84,10 @@ run = ["move-node-to-workspace F", "workspace F"]
 [[on-window-detected]]
 if.app-id = "com.mitchellh.ghostty"
 run = ["move-node-to-workspace T", "workspace T"]
+
+[[on-window-detected]]
+if.app-id = "com.spotify.client"
+run = ["move-node-to-workspace S", "workspace S"]
 
 [[on-window-detected]]
 if.app-id = "com.todoist.mac.Todoist"
