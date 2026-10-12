@@ -1,6 +1,6 @@
 # dotfiles
 
-Config files managed by [chezmoi].
+Config files managed by [chezmoi](https://www.chezmoi.io/).
 
 ## Table of contents
 
@@ -34,5 +34,3 @@ chezmoi installs a few binaries (mainly for LazyVim); they are as follows:
 ## Usage
 
 TODO: Complete instructions on basic chezmoi commands.
-
-[chezmoi]: <https://www.chezmoi.io/>
