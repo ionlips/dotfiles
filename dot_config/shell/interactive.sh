@@ -39,6 +39,13 @@ tmux() {
     command tmux attach-session -t main
 }
 
+# This must be set here, as macOS sets `HISTFILE` in `/etc/zshrc`, which is
+# sourced after `~/.zshenv`.
+if [ -n "${ZSH_VERSION-}" ]; then
+    mkdir -p "$XDG_STATE_HOME/zsh"
+    HISTFILE=$XDG_STATE_HOME/zsh/history
+fi
+
 if [ -s "$NVM_DIR/nvm.sh" ]; then
     . "$NVM_DIR/nvm.sh"
 fi
