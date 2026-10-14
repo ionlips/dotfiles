@@ -8,7 +8,7 @@ fi
 alias l="ls -Fhl"
 alias la="ls -AFhl"
 alias ll="ls -l"
-
+alias mnvim="NVIM_APPNAME=minimal-nvim nvim"
 alias tc="clear && tmux clear-history"
 
 # Currently, I only use one tmux session. Running `tmux` will create this
