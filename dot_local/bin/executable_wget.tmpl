@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+{{ if eq .chezmoi.os "darwin" -}}
+exec /opt/homebrew/bin/wget --hsts-file=$HOME/.local/share/wget-hsts "$@"
+{{- else -}}
+exec /usr/bin/wget --hsts-file=$HOME/.local/share/wget-hsts "$@"
+{{- end }}
