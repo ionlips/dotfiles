@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source "$HOME/.config/shell/env.sh"
+
 set -euo pipefail
 
 export INSTALLER_NO_MODIFY_PATH=1
