@@ -8,8 +8,8 @@ fi
 alias l="ls -Fhl"
 alias la="ls -AFhl"
 alias ll="ls -l"
-
 alias tc="clear && tmux clear-history"
+alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
 
 # Currently, I only use one tmux session. Running `tmux` will create this
 # session, with its config defined below, or attach to it if it already exists.
