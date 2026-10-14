@@ -23,7 +23,7 @@ tmux() {
     if [ -n "$TMUX" ]; then
 
         if [ $(command tmux display-message -p "#S") = main ]; then
-            echo "You are already within the default session."
+            echo You are already within the default session.
         else
             command tmux switch-client -t main
         fi
@@ -41,17 +41,17 @@ tmux() {
 
 # This must be set here, as macOS sets `HISTFILE` in `/etc/zshrc`, which is
 # sourced after `~/.zshenv`.
-if [ -n "${ZSH_VERSION-}" ]; then
-    mkdir -p "$XDG_STATE_HOME/zsh"
+if [ -n "$ZSH_VERSION" ]; then
+    mkdir -p $XDG_STATE_HOME/zsh
     HISTFILE=$XDG_STATE_HOME/zsh/history
 fi
 
-if [ -s "$NVM_DIR/nvm.sh" ]; then
-    . "$NVM_DIR/nvm.sh"
+if [ -s $NVM_DIR/nvm.sh ]; then
+    . $NVM_DIR/nvm.sh
 fi
 
-if [ -n "${ZSH_VERSION-}" ]; then
+if [ -n "$ZSH_VERSION" ]; then
     eval "$(starship init zsh)"
-elif [ -n "${BASH_VERSION-}" ]; then
+elif [ -n "$BASH_VERSION" ]; then
     eval "$(starship init bash)"
 fi
