@@ -8,6 +8,7 @@ fi
 alias l="ls -Fhl"
 alias la="ls -AFhl"
 alias ll="ls -l"
+alias mnvim="NVIM_APPNAME=minimal-nvim nvim"
 alias tc="clear && tmux clear-history"
 alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
 
