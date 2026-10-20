@@ -12,8 +12,8 @@ curl -fsSL https://claude.ai/install.sh | bash
 
 # The installer ignores `CLAUDE_CONFIG_DIR` and leaves `~/.claude/downloads`
 # behind.
-rm -rf ~/.claude/downloads
-rmdir ~/.claude 2>/dev/null || true
+rm -rf $HOME/.claude/downloads
+rmdir $HOME/.claude 2>/dev/null || true
 
 # Starship.
 echo Installing Starship...
