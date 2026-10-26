@@ -1,0 +1,94 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+command -v dconf >/dev/null || exit 0
+
+# Pop Shell and Tiling Assistant fight over windows.
+gnome-extensions disable tiling-assistant@ubuntu.com 2>/dev/null || true
+gnome-extensions enable pop-shell@system76.com 2>/dev/null || true
+gnome-extensions enable auto-move-windows@gnome-shell-extensions.gcampax.github.com 2>/dev/null || true
+
+pop=/org/gnome/shell/extensions/pop-shell
+wm=/org/gnome/desktop/wm/keybindings
+shell=/org/gnome/shell/keybindings
+
+# Tiling.
+dconf write $pop/tile-by-default true
+dconf write $pop/gap-inner "uint32 5"
+dconf write $pop/gap-outer "uint32 5"
+dconf write $pop/mouse-cursor-follows-active-window true
+
+# Focus.
+dconf write $pop/focus-left "['<Super>Left', '<Super>KP_Left', '<Super>h']"
+dconf write $pop/focus-down "['<Super>Down', '<Super>KP_Down', '<Super>j']"
+dconf write $pop/focus-up "['<Super>Up', '<Super>KP_Up', '<Super>k']"
+dconf write $pop/focus-right "['<Super>Right', '<Super>KP_Right', '<Super>l']"
+
+# Move without entering adjustment mode. The monitor and workspace bindings
+# keep their arrow keys but give up hjkl.
+dconf write $pop/tile-move-left-global "['<Super><Shift>h']"
+dconf write $pop/tile-move-down-global "['<Super><Shift>j']"
+dconf write $pop/tile-move-up-global "['<Super><Shift>k']"
+dconf write $pop/tile-move-right-global "['<Super><Shift>l']"
+dconf write $pop/pop-monitor-left "['<Super><Shift>Left', '<Super><Shift>KP_Left']"
+dconf write $pop/pop-monitor-right "['<Super><Shift>Right', '<Super><Shift>KP_Right']"
+dconf write $pop/pop-workspace-down "['<Super><Shift>Down', '<Super><Shift>KP_Down']"
+dconf write $pop/pop-workspace-up "['<Super><Shift>Up', '<Super><Shift>KP_Up']"
+
+dconf write $wm/toggle-fullscreen "['<Super><Shift>z']"
+
+# Persistent workspaces. GNOME only numbers them, so letters map to numbers:
+# 1=1 2=4 3=5 4=A 5=B 6=F 7=M 8=P 9=R 10=S 11=T 12=V.
+dconf write /org/gnome/mutter/dynamic-workspaces false
+dconf write /org/gnome/desktop/wm/preferences/num-workspaces 12
+
+# Switching workspaces only affects the primary display; the others stay put.
+dconf write /org/gnome/mutter/workspaces-only-on-primary true
+
+# Free up Super+1-9 and Super+letters used below.
+dconf write /org/gnome/shell/extensions/dash-to-dock/hot-keys false
+for i in $(seq 1 9); do
+  dconf write $shell/switch-to-application-$i "@as []"
+done
+dconf write $shell/toggle-application-view "@as []"
+dconf write $shell/toggle-message-tray "@as []"
+dconf write $shell/toggle-quick-settings "@as []"
+dconf write $pop/toggle-stacking-global "@as []"
+dconf write /org/gnome/mutter/keybindings/switch-monitor "['XF86Display']"
+dconf write $wm/toggle-maximized "@as []"
+
+dconf write $wm/switch-to-workspace-1 "['<Super>1']"
+dconf write $wm/switch-to-workspace-2 "['<Super>4']"
+dconf write $wm/switch-to-workspace-3 "['<Super>5']"
+dconf write $wm/switch-to-workspace-4 "['<Super>a']"
+dconf write $wm/switch-to-workspace-5 "['<Super>b']"
+dconf write $wm/switch-to-workspace-6 "['<Super>f']"
+dconf write $wm/switch-to-workspace-7 "['<Super>m', '<Super>c']" # Proton Mail is also our calendar.
+dconf write $wm/switch-to-workspace-8 "['<Super>p']"
+dconf write $wm/switch-to-workspace-9 "['<Super>r']"
+dconf write $wm/switch-to-workspace-10 "['<Super>s']"
+dconf write $wm/switch-to-workspace-11 "['<Super>t']"
+dconf write $wm/switch-to-workspace-12 "['<Super>v']"
+
+dconf write $wm/move-to-workspace-1 "['<Super><Shift>1']"
+dconf write $wm/move-to-workspace-2 "['<Super><Shift>4']"
+dconf write $wm/move-to-workspace-3 "['<Super><Shift>5']"
+dconf write $wm/move-to-workspace-5 "['<Super><Shift>b']"
+dconf write $wm/move-to-workspace-6 "['<Super><Shift>f']"
+dconf write $wm/move-to-workspace-11 "['<Super><Shift>t']"
+
+# Requires the Auto Move Windows extension.
+dconf write /org/gnome/shell/extensions/auto-move-windows/application-list "[
+  'anki.desktop:4',
+  'firefox_firefox.desktop:5',
+  'org.gnome.Nautilus.desktop:6',
+  'proton-mail.desktop:7',
+  'proton-pass.desktop:8',
+  'todoist_todoist.desktop:9',
+  'spotify.desktop:10',
+  'com.mitchellh.ghostty.desktop:11',
+  'proton.vpn.app.gtk.desktop:12'
+]"
+{{ end -}}
