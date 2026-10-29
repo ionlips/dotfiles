@@ -2,8 +2,6 @@
 
 Config files managed by [chezmoi](https://www.chezmoi.io/).
 
-## Table of contents
-
 ## Install
 
 Run the following:
