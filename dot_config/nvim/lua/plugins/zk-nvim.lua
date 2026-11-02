@@ -19,6 +19,14 @@ return {
             silent = false,
         },
 
+        -- Create a new meeting note after asking for its title.
+        {
+            "<leader>zm",
+            "<Cmd>ZkNew { dir = 'meetings', template = 'meeting.md', title = vim.fn.input('Title: ') }<CR>",
+            desc = "New meeting note",
+            silent = false,
+        },
+
         -- Create a new note after asking for its title.
         {
             "<leader>zn",
