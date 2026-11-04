@@ -1,0 +1,12 @@
+{
+  "plugins": {
+    "auto-dark-mode.nvim": {
+      "rev": "2b16a24c202892e61fca7df4d2d7c4c872a44165",
+      "src": "https://github.com/f-person/auto-dark-mode.nvim"
+    },
+    "zk-nvim": {
+      "rev": "2093138f4fabce994cf19403fca89d629f312ac9",
+      "src": "https://github.com/zk-org/zk-nvim"
+    }
+  }
+}

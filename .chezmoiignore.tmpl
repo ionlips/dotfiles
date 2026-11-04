@@ -7,3 +7,8 @@ README.md
 .config/zsh
 .zshenv
 {{- end }}
+
+{{ if .remote -}}
+.config/nvim/lua/plugins
+.config/nvim/nvim-pack-lock.json
+{{- end }}

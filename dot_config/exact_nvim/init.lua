@@ -14,3 +14,10 @@ require("autocommands")
 require("diagnostics")
 require("formatting")
 require("keymaps")
+
+-- Plugins, managed by `vim.pack`. Each file in `lua/plugins` adds and sets up
+-- one. They aren't installed on remote systems (see `.chezmoiignore.tmpl`).
+local plugins = vim.fn.stdpath("config") .. "/lua/plugins"
+for _, file in ipairs(vim.fn.glob(plugins .. "/*.lua", false, true)) do
+    require("plugins." .. vim.fn.fnamemodify(file, ":t:r"))
+end
