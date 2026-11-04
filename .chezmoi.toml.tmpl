@@ -1,0 +1,4 @@
+{{- $remote := promptBoolOnce . "remote" "Is this a remote system (e.g. an SSH or HPC host)" -}}
+
+[data]
+remote = {{ $remote }}

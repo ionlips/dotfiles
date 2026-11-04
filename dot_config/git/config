@@ -9,6 +9,10 @@ branch = true
 showStash = true
 showUntrackedFiles = all
 
+# Clone over HTTPS (no key needed), but push over SSH.
+[url "git@github.com:ionlips/"]
+pushInsteadOf = https://github.com/ionlips/
+
 [user]
 email = 306178285+ionlips@users.noreply.github.com
 name = Ion Lipsiuc

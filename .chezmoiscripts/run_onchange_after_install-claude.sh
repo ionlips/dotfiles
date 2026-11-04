@@ -4,9 +4,6 @@ source $HOME/.config/shell/env.sh
 
 set -euo pipefail
 
-export INSTALLER_NO_MODIFY_PATH=1
-
-# Claude Code.
 echo Installing Claude Code...
 curl -fsSL https://claude.ai/install.sh | bash
 
@@ -14,11 +11,3 @@ curl -fsSL https://claude.ai/install.sh | bash
 # behind.
 rm -rf $HOME/.claude/downloads
 rmdir $HOME/.claude 2>/dev/null || true
-
-# Starship.
-echo Installing Starship...
-curl -sS https://starship.rs/install.sh | sh -s -- -b $HOME/.local/bin -y
-
-# uv.
-echo Installing uv...
-curl -LsSf https://astral.sh/uv/install.sh | sh
