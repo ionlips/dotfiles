@@ -4,11 +4,14 @@ README.md
 .bash_profile
 .bashrc
 {{- else -}}
+.config/aerospace
 .config/zsh
 .zshenv
 {{- end }}
 
 {{ if .remote -}}
+.config/aerc
+.config/ghostty
 .config/nvim/lua/plugins/auto-dark-mode.lua
 .config/nvim/lua/plugins/zk.lua
 # `vim.pack` would install every plugin in the lockfile.
