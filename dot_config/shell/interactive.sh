@@ -40,7 +40,7 @@ tmux() {
 }
 
 # This must be set here, as macOS sets `HISTFILE` in `/etc/zshrc`, which is
-# sourced after `~/.zshenv`.
+# sourced after `$HOME/.zshenv`.
 if [ -n "$ZSH_VERSION" ]; then
     mkdir -p $XDG_STATE_HOME/zsh
     HISTFILE=$XDG_STATE_HOME/zsh/history

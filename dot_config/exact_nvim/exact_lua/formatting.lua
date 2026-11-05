@@ -22,7 +22,7 @@ M.formatters = {
         cmd = {
             "markdownlint-cli2",
             "--config",
-            (vim.env.XDG_CONFIG_HOME or vim.fn.expand("~/.config"))
+            (vim.env.XDG_CONFIG_HOME or vim.fn.expand("$HOME/.config"))
                 .. "/markdownlint/config.yaml",
             "--fix",
             "$FILENAME",
