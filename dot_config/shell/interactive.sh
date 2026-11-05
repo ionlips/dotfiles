@@ -44,6 +44,9 @@ tmux() {
 if [ -n "$ZSH_VERSION" ]; then
     mkdir -p $XDG_STATE_HOME/zsh
     HISTFILE=$XDG_STATE_HOME/zsh/history
+elif [ -n "$BASH_VERSION" ]; then
+    mkdir -p $XDG_STATE_HOME/bash
+    HISTFILE=$XDG_STATE_HOME/bash/history
 fi
 
 if command -v starship >/dev/null 2>&1; then
