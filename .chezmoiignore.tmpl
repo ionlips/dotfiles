@@ -1,5 +1,16 @@
 README.md
 
+{{ if .remote -}}
+.config/aerc
+.config/ghostty
+.config/nvim/lua/plugins/auto-dark-mode.lua
+.config/nvim/lua/plugins/zk.lua
+
+# `vim.pack` would install every plugin otherwise.
+.config/nvim/nvim-pack-lock.json
+
+{{- end }}
+
 {{ if eq .chezmoi.os "darwin" -}}
 .bash_profile
 .bashrc
@@ -7,13 +18,4 @@ README.md
 .config/aerospace
 .config/zsh
 .zshenv
-{{- end }}
-
-{{ if .remote -}}
-.config/aerc
-.config/ghostty
-.config/nvim/lua/plugins/auto-dark-mode.lua
-.config/nvim/lua/plugins/zk.lua
-# `vim.pack` would install every plugin in the lockfile.
-.config/nvim/nvim-pack-lock.json
 {{- end }}

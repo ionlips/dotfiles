@@ -95,6 +95,7 @@ type = "archive"
 {{ if eq .chezmoi.os "darwin" -}}
 url = "https://github.com/neovim/neovim/releases/download/v0.12.4/nvim-macos-arm64.tar.gz"
 {{- else -}}
-# Built against glibc 2.17 rather than 2.34, so it runs on older systems.
+
+# Built against glibc version 2.17.
 url = "https://github.com/neovim/neovim-releases/releases/download/v0.12.4/nvim-linux-x86_64.tar.gz"
 {{- end }}
