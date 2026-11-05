@@ -1,5 +1,5 @@
--- Follow the system's appearance by switching 'background', which the colour
--- scheme adapts to.
+-- Follow the system's appearance by switching 'background', which tokyonight
+-- adapts to.
 vim.pack.add({ "https://github.com/f-person/auto-dark-mode.nvim" }, {
     confirm = false,
 })

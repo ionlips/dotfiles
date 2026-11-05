@@ -9,6 +9,8 @@ README.md
 {{- end }}
 
 {{ if .remote -}}
-.config/nvim/lua/plugins
+.config/nvim/lua/plugins/auto-dark-mode.lua
+.config/nvim/lua/plugins/zk.lua
+# `vim.pack` would install every plugin in the lockfile.
 .config/nvim/nvim-pack-lock.json
 {{- end }}
