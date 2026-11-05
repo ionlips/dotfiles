@@ -6,6 +6,11 @@ vim.g.netrw_altfile = 1 -- keep the alternate file correct
 
 vim.keymap.set("n", "<leader>e", ":Lexplore<cr>", { silent = true })
 
+-- netrw maps <C-l> to refresh unless <Plug>NetrwRefresh is already mapped,
+-- which shadows the global <C-l> split navigation inside netrw. Give refresh
+-- its own key so <C-l> keeps moving to the right split.
+vim.keymap.set("n", "<leader>r", "<Plug>NetrwRefresh", { remap = true, desc = "Refresh netrw" })
+
 -- netrw's built-in `%` opens new files in the netrw window instead of
 -- respecting `netrw_browse_split`. Override it to open in the previous window.
 vim.api.nvim_create_autocmd("FileType", {
