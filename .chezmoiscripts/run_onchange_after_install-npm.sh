@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 source $HOME/.config/shell/env.sh
+
 set -euo pipefail
 
 # Formatters used by Neovim on save. Installed under `$XDG_DATA_HOME/npm` as

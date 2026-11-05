@@ -17,6 +17,6 @@ pushInsteadOf = https://github.com/ionlips/
 email = 306178285+ionlips@users.noreply.github.com
 name = Ion Lipsiuc
 
-# This must be included after `[user]` otherwise, `[user]` will overwrite it.
+# This must be included after `[user]`, otherwise, `[user]` will overwrite it.
 [includeIf "gitdir:~/dev/ichec/"]
 path = ~/.config/git/config.ichec
