@@ -5,8 +5,9 @@
       "src": "https://github.com/f-person/auto-dark-mode.nvim"
     },
     "tokyonight.nvim": {
-      "rev": "cdc07ac78467a233fd62c493de29a17e0cf2b2b6",
-      "src": "https://github.com/folke/tokyonight.nvim"
+      "rev": "545d72cde6400835d895160ecb5853874fd5156d",
+      "src": "https://github.com/folke/tokyonight.nvim",
+      "version": "'v4.14.1'"
     },
     "zk-nvim": {
       "rev": "2093138f4fabce994cf19403fca89d629f312ac9",
