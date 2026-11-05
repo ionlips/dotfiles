@@ -4,6 +4,11 @@
       "rev": "2b16a24c202892e61fca7df4d2d7c4c872a44165",
       "src": "https://github.com/f-person/auto-dark-mode.nvim"
     },
+    "gitsigns.nvim": {
+      "rev": "a462f416e2ce4744531c6256252dee99a7d34a83",
+      "src": "https://github.com/lewis6991/gitsigns.nvim",
+      "version": "'v2.1.0'"
+    },
     "tokyonight.nvim": {
       "rev": "545d72cde6400835d895160ecb5853874fd5156d",
       "src": "https://github.com/folke/tokyonight.nvim",
