@@ -46,10 +46,6 @@ if [ -n "$ZSH_VERSION" ]; then
     HISTFILE=$XDG_STATE_HOME/zsh/history
 fi
 
-if [ -s $NVM_DIR/nvm.sh ]; then
-    . $NVM_DIR/nvm.sh
-fi
-
 if command -v starship >/dev/null 2>&1; then
     if [ -n "$ZSH_VERSION" ]; then
         eval "$(starship init zsh)"
