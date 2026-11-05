@@ -1,5 +1,3 @@
--- Note-taking with zk. Requires the `zk` binary. Buffer-local mappings for
--- notes are in `ftplugin/markdown.lua`.
 vim.pack.add({ "https://github.com/zk-org/zk-nvim" }, { confirm = false })
 
 require("zk").setup({ picker = "select" })

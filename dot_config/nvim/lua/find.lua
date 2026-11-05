@@ -1,10 +1,8 @@
--- `:find` fuzzy-matches against the files that `fd` lists: hidden files are
--- included, but `.git` and anything ignored by Git are not. `fd` runs once per
--- command line, rather than on every keystroke.
 local files
 
 vim.api.nvim_create_autocmd("CmdlineEnter", {
     group = vim.api.nvim_create_augroup("find_files", { clear = true }),
+
     callback = function()
         files = nil
     end,
@@ -19,15 +17,18 @@ function _G.native_find(text, _)
             "--hidden",
             "--type=file",
         })
+
         if vim.v.shell_error ~= 0 then
             files = {}
         end
     end
+
     if text == "" then
         return files
     end
+
     return vim.fn.matchfuzzy(files, text)
 end
-vim.opt.findfunc = "v:lua.native_find"
 
+vim.opt.findfunc = "v:lua.native_find"
 vim.keymap.set("n", "<leader>f", ":find ", { silent = false })
