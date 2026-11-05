@@ -1,31 +1,32 @@
-local ignore_patterns = {
-    "node_modules",
-    "%.git",
-    "%.cache",
-    "dist",
-    "build",
-    "%.tmp",
-    "%.log",
-}
+-- `:find` fuzzy-matches against the files that `fd` lists: hidden files are
+-- included, but `.git` and anything ignored by Git are not. `fd` runs once per
+-- command line, rather than on every keystroke.
+local files
+
+vim.api.nvim_create_autocmd("CmdlineEnter", {
+    group = vim.api.nvim_create_augroup("find_files", { clear = true }),
+    callback = function()
+        files = nil
+    end,
+})
 
 function _G.native_find(text, _)
-    local files = vim.fn.glob("**/*", true, true)
-    local result = {}
-    for _, f in ipairs(files) do
-        if vim.fn.isdirectory(f) == 0 then
-            local skip = false
-            for _, pat in ipairs(ignore_patterns) do
-                if f:match(pat) then
-                    skip = true
-                    break
-                end
-            end
-            if not skip then
-                result[#result + 1] = f
-            end
+    if not files then
+        files = vim.fn.systemlist({
+            "fd",
+            "--color=never",
+            "--exclude=.git",
+            "--hidden",
+            "--type=file",
+        })
+        if vim.v.shell_error ~= 0 then
+            files = {}
         end
     end
-    return vim.fn.matchfuzzy(result, text)
+    if text == "" then
+        return files
+    end
+    return vim.fn.matchfuzzy(files, text)
 end
 vim.opt.findfunc = "v:lua.native_find"
 
