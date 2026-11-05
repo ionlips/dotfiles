@@ -10,23 +10,24 @@ gnome-extensions enable pop-shell@system76.com 2>/dev/null || true
 gnome-extensions enable auto-move-windows@gnome-shell-extensions.gcampax.github.com 2>/dev/null || true
 
 pop=/org/gnome/shell/extensions/pop-shell
-wm=/org/gnome/desktop/wm/keybindings
 shell=/org/gnome/shell/keybindings
+wm=/org/gnome/desktop/wm/keybindings
 
 dconf write $pop/tile-by-default true
 dconf write $pop/mouse-cursor-follows-active-window true
 dconf write /org/gnome/mutter/dynamic-workspaces false
 dconf write /org/gnome/desktop/wm/preferences/num-workspaces 12
-
 dconf write /org/gnome/mutter/workspaces-only-on-primary true
 
+# [gaps]
 dconf write $pop/gap-inner "uint32 5"
 dconf write $pop/gap-outer "uint32 5"
 
+# [key-mapping]
 dconf write /org/gnome/shell/extensions/dash-to-dock/hot-keys false
 
 for i in $(seq 1 9); do
-  dconf write $shell/switch-to-application-$i "@as []"
+    dconf write $shell/switch-to-application-$i "@as []"
 done
 
 dconf write $shell/toggle-application-view "@as []"
@@ -36,7 +37,7 @@ dconf write $pop/toggle-stacking-global "@as []"
 dconf write /org/gnome/mutter/keybindings/switch-monitor "['XF86Display']"
 dconf write $wm/toggle-maximized "@as []"
 
-# 1=1 2=4 3=5 4=A 5=B 6=F 7=M 8=P 9=R 10=S 11=T 12=V.
+# [mode.main.binding]
 dconf write $wm/switch-to-workspace-1 "['<Super>1']"
 dconf write $wm/switch-to-workspace-2 "['<Super>4']"
 dconf write $wm/switch-to-workspace-3 "['<Super>5']"
@@ -73,15 +74,16 @@ dconf write $pop/pop-workspace-down "['<Super><Shift>Down', '<Super><Shift>KP_Do
 dconf write $pop/pop-workspace-up "['<Super><Shift>Up', '<Super><Shift>KP_Up']"
 dconf write $wm/toggle-fullscreen "['<Super><Shift>z']"
 
+# [[on-window-detected]]
 dconf write /org/gnome/shell/extensions/auto-move-windows/application-list "[
-  'proton-mail.desktop:7',
-  'proton.vpn.app.gtk.desktop:12',
-  'org.gnome.Nautilus.desktop:6',
-  'com.mitchellh.ghostty.desktop:11',
-  'spotify.desktop:10',
-  'todoist_todoist.desktop:9',
-  'proton-pass.desktop:8',
-  'anki.desktop:4',
-  'firefox_firefox.desktop:5'
+    'proton-mail.desktop:7',
+    'proton.vpn.app.gtk.desktop:12',
+    'org.gnome.Nautilus.desktop:6',
+    'com.mitchellh.ghostty.desktop:11',
+    'spotify.desktop:10',
+    'todoist_todoist.desktop:9',
+    'proton-pass.desktop:8',
+    'anki.desktop:4',
+    'firefox_firefox.desktop:5'
 ]"
 {{ end -}}

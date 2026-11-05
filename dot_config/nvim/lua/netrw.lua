@@ -1,18 +1,15 @@
-vim.g.netrw_liststyle = 3 -- tree view
-vim.g.netrw_banner = 0 -- hide the top banner
-vim.g.netrw_winsize = 25 -- fix the left split width
-vim.g.netrw_browse_split = 0 -- open files in the previous window
-vim.g.netrw_altfile = 1 -- keep the alternate file correct
-
+vim.g.netrw_liststyle = 3
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 25
+vim.g.netrw_browse_split = 0
+vim.g.netrw_altfile = 1
 vim.keymap.set("n", "<leader>e", ":Lexplore<cr>", { silent = true })
-
--- netrw maps <C-l> to refresh unless <Plug>NetrwRefresh is already mapped,
--- which shadows the global <C-l> split navigation inside netrw. Give refresh
--- its own key so <C-l> keeps moving to the right split.
-vim.keymap.set("n", "<leader>r", "<Plug>NetrwRefresh", { remap = true, desc = "Refresh netrw" })
-
--- netrw's built-in `%` opens new files in the netrw window instead of
--- respecting `netrw_browse_split`. Override it to open in the previous window.
+vim.keymap.set(
+    "n",
+    "<leader>r",
+    "<Plug>NetrwRefresh",
+    { remap = true, desc = "Refresh netrw" }
+)
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "netrw",
     callback = function()
@@ -21,26 +18,28 @@ vim.api.nvim_create_autocmd("FileType", {
             if fname == "" then
                 return
             end
-
             local dir = vim.b.netrw_curdir or vim.fn.getcwd()
             local path = dir .. "/" .. fname
-
-            if vim.fn.filereadable(path) == 1 or vim.fn.isdirectory(path) == 1 then
+            if
+                vim.fn.filereadable(path) == 1
+                or vim.fn.isdirectory(path) == 1
+            then
                 vim.notify("Already exists: " .. fname, vim.log.levels.WARN)
                 return
             end
-
             if fname:match("/$") then
                 vim.fn.mkdir(path, "p")
                 vim.cmd("edit")
             else
                 local f = io.open(path, "w")
                 if not f then
-                    vim.notify("Failed to create: " .. fname, vim.log.levels.ERROR)
+                    vim.notify(
+                        "Failed to create: " .. fname,
+                        vim.log.levels.ERROR
+                    )
                     return
                 end
                 f:close()
-
                 local escaped = vim.fn.fnameescape(path)
                 if vim.fn.winnr("#") == 0 then
                     vim.cmd("edit " .. escaped)
@@ -49,6 +48,11 @@ vim.api.nvim_create_autocmd("FileType", {
                     vim.cmd("edit " .. escaped)
                 end
             end
-        end, { buffer = true, silent = true, noremap = true, desc = "Create file in previous window" })
+        end, {
+            buffer = true,
+            silent = true,
+            noremap = true,
+            desc = "Create file in previous window",
+        })
     end,
 })

@@ -39,8 +39,6 @@ tmux() {
     command tmux attach-session -t main
 }
 
-# This must be set here, as macOS sets `HISTFILE` in `/etc/zshrc`, which is
-# sourced after `$HOME/.zshenv`.
 if [ -n "$ZSH_VERSION" ]; then
     mkdir -p $XDG_STATE_HOME/zsh
     HISTFILE=$XDG_STATE_HOME/zsh/history
@@ -50,9 +48,11 @@ elif [ -n "$BASH_VERSION" ]; then
 fi
 
 if command -v starship >/dev/null 2>&1; then
+
     if [ -n "$ZSH_VERSION" ]; then
         eval "$(starship init zsh)"
     elif [ -n "$BASH_VERSION" ]; then
         eval "$(starship init bash)"
     fi
+
 fi

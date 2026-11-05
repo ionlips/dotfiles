@@ -1,11 +1,8 @@
 vim.pack.add({ "https://github.com/zk-org/zk-nvim" }, { confirm = false })
-
 require("zk").setup({ picker = "select" })
-
 local function map(lhs, rhs, desc, mode)
     vim.keymap.set(mode or "n", lhs, rhs, { desc = desc })
 end
-
 map(
     "<leader>zf",
     "<Cmd>ZkNotes { sort = { 'modified' }, match = { vim.fn.input('Search: ') } }<CR>",

@@ -1,7 +1,6 @@
 vim.pack.add({
     { src = "https://github.com/stevearc/conform.nvim", version = "v9.1.0" },
 }, { confirm = false })
-
 require("conform").setup({
     formatters_by_ft = {
         bash = { "shfmt" },
@@ -16,7 +15,6 @@ require("conform").setup({
         toml = { "taplo" },
         yaml = { "prettier" },
     },
-
     formatters = {
         ["markdownlint-cli2"] = {
             prepend_args = {
@@ -29,7 +27,6 @@ require("conform").setup({
             args = { "format", "--stdin-filepath", "$FILENAME", "-" },
         },
     },
-
     format_on_save = function(bufnr)
         if vim.b[bufnr].autoformat == false then
             return

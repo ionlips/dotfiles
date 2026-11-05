@@ -7,8 +7,6 @@ vim.o.undofile = true
 vim.o.autoread = true
 vim.o.laststatus = 3
 vim.o.cmdheight = 0
-
--- Copy and paste via OSC 52 over SSH, otherwise via tmux.
 if vim.env.SSH_TTY then
     vim.g.clipboard = {
         name = "OSC 52",
