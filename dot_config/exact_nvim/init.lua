@@ -4,7 +4,6 @@
 vim.g.mapleader = " "
 
 require("options")
-require("lsp")
 require("netrw")
 require("statusline")
 require("find")
@@ -21,5 +20,6 @@ for _, file in ipairs(vim.fn.glob(plugins .. "/*.lua", false, true)) do
     require("plugins." .. vim.fn.fnamemodify(file, ":t:r"))
 end
 
--- After the plugins, as the colour scheme is one.
+-- After the plugins, as these use nvim-lspconfig and tokyonight.
 require("colorscheme")
+require("lsp")

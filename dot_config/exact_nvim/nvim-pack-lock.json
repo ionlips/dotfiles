@@ -9,6 +9,11 @@
       "src": "https://github.com/lewis6991/gitsigns.nvim",
       "version": "'v2.1.0'"
     },
+    "nvim-lspconfig": {
+      "rev": "4d363f93c3581b9212a24f7a830d7590b3f050af",
+      "src": "https://github.com/neovim/nvim-lspconfig",
+      "version": "'v2.12.0'"
+    },
     "tokyonight.nvim": {
       "rev": "545d72cde6400835d895160ecb5853874fd5156d",
       "src": "https://github.com/folke/tokyonight.nvim",

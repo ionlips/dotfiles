@@ -1,7 +1,7 @@
--- lsp
--- Each is configured in `lsp/`. Only enable those that are installed, as
--- Neovim warns about the rest whenever a matching file is opened. (A server
--- installed later, e.g. via `module load`, needs Neovim to be restarted.)
+-- Configs come from nvim-lspconfig, so this runs after the plugins are added.
+-- Only enable the servers that are installed, as Neovim warns about the rest
+-- whenever a matching file is opened. (A server installed later, e.g. via
+-- `module load`, needs Neovim to be restarted.)
 vim.lsp.enable(vim.tbl_filter(function(name)
     local cmd = vim.lsp.config[name].cmd
     return type(cmd) ~= "table" or vim.fn.executable(cmd[1]) == 1
