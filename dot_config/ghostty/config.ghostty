@@ -3,5 +3,6 @@ bell-features = no-title
 font-family = Iosevka
 keybind = shift+enter=text:\n
 macos-titlebar-proxy-icon = hidden
+shell-integration-features = ssh-env,ssh-terminfo
 theme = dark:TokyoNight Night, light:TokyoNight Day
 title = " "
