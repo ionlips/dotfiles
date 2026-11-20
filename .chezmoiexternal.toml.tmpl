@@ -1,0 +1,123 @@
+[".local/bin/biome"]
+executable = true
+type = "file"
+
+{{ if eq .chezmoi.os "darwin" -}}
+url = "https://github.com/biomejs/biome/releases/download/%40biomejs%2Fbiome%402.6.5/biome-darwin-arm64"
+{{- else -}}
+url = "https://github.com/biomejs/biome/releases/download/%40biomejs%2Fbiome%402.6.5/biome-linux-x64-musl"
+{{- end }}
+
+[".local/bin/fd"]
+executable = true
+type = "archive-file"
+
+{{ if eq .chezmoi.os "darwin" -}}
+path = "fd-v10.4.2-aarch64-apple-darwin/fd"
+url = "https://github.com/sharkdp/fd/releases/download/v10.4.2/fd-v10.4.2-aarch64-apple-darwin.tar.gz"
+{{- else -}}
+path = "fd-v10.4.2-x86_64-unknown-linux-musl/fd"
+url = "https://github.com/sharkdp/fd/releases/download/v10.4.2/fd-v10.4.2-x86_64-unknown-linux-musl.tar.gz"
+{{- end }}
+
+[".local/bin/lazygit"]
+executable = true
+path = "lazygit"
+type = "archive-file"
+
+{{ if eq .chezmoi.os "darwin" -}}
+url = "https://github.com/jesseduffield/lazygit/releases/download/v0.63.1/lazygit_0.63.1_darwin_arm64.tar.gz"
+{{- else -}}
+url = "https://github.com/jesseduffield/lazygit/releases/download/v0.63.1/lazygit_0.63.1_linux_x86_64.tar.gz"
+{{- end }}
+
+[".local/bin/rg"]
+executable = true
+type = "archive-file"
+
+{{ if eq .chezmoi.os "darwin" -}}
+path = "ripgrep-15.2.0-aarch64-apple-darwin/rg"
+url = "https://github.com/BurntSushi/ripgrep/releases/download/15.2.0/ripgrep-15.2.0-aarch64-apple-darwin.tar.gz"
+{{- else -}}
+path = "ripgrep-15.2.0-x86_64-unknown-linux-musl/rg"
+url = "https://github.com/BurntSushi/ripgrep/releases/download/15.2.0/ripgrep-15.2.0-x86_64-unknown-linux-musl.tar.gz"
+{{- end }}
+
+[".local/bin/rumdl"]
+executable = true
+path = "rumdl"
+type = "archive-file"
+
+{{ if eq .chezmoi.os "darwin" -}}
+url = "https://github.com/rvben/rumdl/releases/download/v0.3.2/rumdl-v0.3.2-aarch64-apple-darwin.tar.gz"
+{{- else -}}
+url = "https://github.com/rvben/rumdl/releases/download/v0.3.2/rumdl-v0.3.2-x86_64-unknown-linux-musl.tar.gz"
+{{- end }}
+
+[".local/bin/shfmt"]
+executable = true
+type = "file"
+
+{{ if eq .chezmoi.os "darwin" -}}
+url = "https://github.com/mvdan/sh/releases/download/v3.14.1/shfmt_v3.14.1_darwin_arm64"
+{{- else -}}
+url = "https://github.com/mvdan/sh/releases/download/v3.14.1/shfmt_v3.14.1_linux_amd64"
+{{- end }}
+
+[".local/bin/stylua"]
+executable = true
+path = "stylua"
+type = "archive-file"
+
+{{ if eq .chezmoi.os "darwin" -}}
+url = "https://github.com/JohnnyMorganz/StyLua/releases/download/v2.6.0/stylua-macos-aarch64.zip"
+{{- else -}}
+url = "https://github.com/JohnnyMorganz/StyLua/releases/download/v2.6.0/stylua-linux-x86_64-musl.zip"
+{{- end }}
+
+[".local/bin/taplo"]
+decompress = "gzip"
+executable = true
+type = "file"
+
+{{ if eq .chezmoi.os "darwin" -}}
+url = "https://github.com/tamasfe/taplo/releases/download/0.10.0/taplo-darwin-aarch64.gz"
+{{- else -}}
+url = "https://github.com/tamasfe/taplo/releases/download/0.10.0/taplo-linux-x86_64.gz"
+{{- end }}
+
+[".local/bin/yamlfmt"]
+executable = true
+path = "yamlfmt"
+type = "archive-file"
+
+{{ if eq .chezmoi.os "darwin" -}}
+url = "https://github.com/google/yamlfmt/releases/download/v0.21.0/yamlfmt_0.21.0_Darwin_arm64.tar.gz"
+{{- else -}}
+url = "https://github.com/google/yamlfmt/releases/download/v0.21.0/yamlfmt_0.21.0_Linux_x86_64.tar.gz"
+{{- end }}
+
+{{ if not .remote -}}
+[".local/bin/zk"]
+executable = true
+path = "zk"
+type = "archive-file"
+
+{{ if eq .chezmoi.os "darwin" -}}
+url = "https://github.com/zk-org/zk/releases/download/v0.15.5/zk-v0.15.5-macos-arm64.tar.gz"
+{{- else -}}
+url = "https://github.com/zk-org/zk/releases/download/v0.15.5/zk-v0.15.5-linux-amd64.tar.gz"
+{{- end }}
+{{- end }}
+
+[".local/opt/nvim"]
+stripComponents = 1
+type = "archive"
+
+{{ if eq .chezmoi.os "darwin" -}}
+url = "https://github.com/neovim/neovim/releases/download/v0.12.4/nvim-macos-arm64.tar.gz"
+{{- else -}}
+
+# built against glibc 2.17.
+url = "https://github.com/neovim/neovim-releases/releases/download/v0.12.4/nvim-linux-x86_64.tar.gz"
+{{- end }}

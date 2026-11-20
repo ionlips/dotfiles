@@ -1,0 +1,21 @@
+{{ if .remote -}}
+#!/usr/bin/env bash
+
+set -e -o pipefail -u
+
+if ! command -v tic >/dev/null; then
+    echo skipped terminfo, as tic is unavailable.
+    exit 0
+fi
+
+# tmux falls back to `screen` on systems that lack this entry.
+echo compiling terminfo...
+
+# note that we don't use the long forms for `-p` since macos's `mkdir` won't
+# accept it.
+mkdir -p $HOME/.terminfo
+
+tic -x -o $HOME/.terminfo - <<'EOF'
+{{ include ".terminfo/tmux-256color" -}}
+EOF
+{{ end -}}

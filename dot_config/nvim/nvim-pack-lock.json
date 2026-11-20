@@ -1,0 +1,24 @@
+{
+  "plugins": {
+    "conform.nvim": {
+      "rev": "3543d000dafbc41cc7761d860cfdb24e82154f75",
+      "src": "https://github.com/stevearc/conform.nvim",
+      "version": "'v9.1.0'"
+    },
+    "gitsigns.nvim": {
+      "rev": "a462f416e2ce4744531c6256252dee99a7d34a83",
+      "src": "https://github.com/lewis6991/gitsigns.nvim",
+      "version": "'v2.1.0'"
+    },
+    "nvim-lspconfig": {
+      "rev": "4d363f93c3581b9212a24f7a830d7590b3f050af",
+      "src": "https://github.com/neovim/nvim-lspconfig",
+      "version": "'v2.12.0'"
+    },
+    "zk-nvim": {
+      "rev": "2093138f4fabce994cf19403fca89d629f312ac9",
+      "src": "https://github.com/zk-org/zk-nvim",
+      "version": "'v0.5.3'"
+    }
+  }
+}

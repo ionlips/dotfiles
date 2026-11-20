@@ -1,0 +1,19 @@
+[commit]
+status = false
+
+[status]
+branch = true
+showStash = true
+showUntrackedFiles = all
+
+# clone over https (no key needed), but push over ssh.
+[url "git@github.com:ionlips/"]
+pushInsteadOf = https://github.com/ionlips/
+
+[user]
+email = 306178285+ionlips@users.noreply.github.com
+name = Ion Lipsiuc
+
+# this must be included after `[user]`, otherwise, `[user]` will overwrite it.
+[includeIf "gitdir:~/dev/ichec/"]
+path = ~/.config/git/config.ichec

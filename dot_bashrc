@@ -1,0 +1,12 @@
+if [ -f $HOME/.config/shell/env.sh ]; then
+    source $HOME/.config/shell/env.sh
+fi
+
+case $- in
+    *i*) ;;
+    *) return ;;
+esac
+
+if [ -f $HOME/.config/shell/interactive.sh ]; then
+    source $HOME/.config/shell/interactive.sh
+fi
