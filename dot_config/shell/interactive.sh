@@ -11,6 +11,13 @@ alias ll="ls -l"
 alias tc="clear && tmux clear-history"
 alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
 
+# `clear` only wipes the visible screen; drop scrollback history too.
+clear() {
+    command clear "$@"
+    [ -z "$TMUX" ] && printf "\033[3J"
+    return 0
+}
+
 # currently, i only use one tmux session. running `tmux` will create this
 # session, with its config defined below, or attach to it if it already exists.
 tmux() {
